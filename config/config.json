@@ -1,5 +1,5 @@
 {
-	"domain":"http://blog.lesite.us",
+	"domain":"http://backoffice.staging.ofertia.com",
 	"skipext":	[
 					"pdf",
 					"xml"
@@ -8,6 +8,7 @@
 	"debug":true,
 	"output":"sitemap.xml",
 	"exclude":	[
-				"action=edit"
-				]
+				"/delete"
+				],
+  "cookie": "JSESSIONID="
 }

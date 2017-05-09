@@ -46,11 +46,12 @@ class Crawler():
 	target_domain = ""
 
 	def __init__(self, parserobots=False, output=None, report=False ,domain="",
-				 exclude=[], skipext=[], drop=[], debug=False, verbose=False):
+				 exclude=[], skipext=[], drop=[], debug=False, verbose=False, cookie=None):
 		self.parserobots = parserobots
 		self.output 	= output
 		self.report 	= report
 		self.domain 	= domain
+		self.cookie 	= cookie
 		self.exclude 	= exclude
 		self.skipext 	= skipext
 		self.drop		= drop
@@ -104,6 +105,8 @@ class Crawler():
 		self.crawled.add(crawling)
 		logging.info("Crawling #{}: {}".format(len(self.crawled), url.geturl()))
 		request = Request(crawling, headers={"User-Agent":config.crawler_user_agent})
+		if self.cookie:
+				request.add_header("Cookie", self.cookie)
 
 		try:
 			response = urlopen(request)
