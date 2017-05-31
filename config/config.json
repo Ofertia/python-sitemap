@@ -8,7 +8,14 @@
 	"debug":true,
 	"output":"sitemap.xml",
 	"exclude":	[
-				"/delete"
+				"/delete",
+        "/edit/",
+        "brochureStore",
+        "/ajax",
+        "j_spring_security_logout",
+        "?",
+        "search?",
+        "list?"
 				],
-  "cookie": "JSESSIONID="
+  "cookie": "JSESSIONID=B1AF27E9E3C9A856138E6D275A526304"
 }
